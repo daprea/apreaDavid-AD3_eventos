@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Usuario</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+            margin-top: 50px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        i {
+            position: absolute;
+            top: 15px;
+            left: 10px;
+            color: #007bff;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Registro de Usuario</h2>
+
+<form action="@{/registro}" th:object="${usuario}" method="post">
+    <div class="input-box">
+        <i class='bx bxs-user'></i>
+        <p><input type="text" th:field="*{username}" placeholder="Usuario"></p>
+    </div>
+    <div class="input-box">
+        <i class='bx bxs-lock-alt'></i>
+        <p><input type="password" th:field="*{password}" placeholder="Contraseña"></p>
+    </div>
+    <div class="input-box">
+        <i class='bx bxs-lock-alt'></i>
+        <p><input type="text" th:field="*{nombre}" placeholder="Nombre"></p>
+    </div>
+    <div class="input-box">
+        <i class='bx bxs-lock-alt'></i>
+        <p><input type="text" th:field="*{apellidos}" placeholder="Apellidos"></p>
+    </div>
+    <div class="input-box">
+        <i class='bx bxs-lock-alt'></i>
+        <p><input type="text" th:field="*{direccion}" placeholder="Dirección"></p>
+    </div>
+    <div class="input-box">
+        <i class='bx bxs-lock-alt'></i>
+        <p><input type="date" th:field="*{fechaRegistro}" placeholder="Fecha de Registro"></p>
+    </div>
+    <input type="submit" value="Registrar">
+</form>
+
+</body>
+</html>
